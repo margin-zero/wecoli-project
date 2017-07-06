@@ -6,11 +6,15 @@ $(document).ready(function() {
 });
 
 function wclPreSpaceCutterRun(preSpaceCutterSelectors) {
+
     var i;
+
     $selections = $(preSpaceCutterSelectors);
 
     $.each($(preSpaceCutterSelectors), function(index, obj) {
+
         var $this = $(this);
+
         $this.css("display", "block"); // set display to block to avoid first line problems
 
         if ($this.prop("tagName") == "CODE") {
@@ -22,10 +26,12 @@ function wclPreSpaceCutterRun(preSpaceCutterSelectors) {
                 };
             };
         };
+
     });
 };
 
 function wclPreSpaceCutter(htmlStr) {
+
     // be sure if oldHtml is String and replace html entities
     var oldHtml = String(htmlStr).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
     var newHtml;
