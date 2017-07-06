@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Turn OFF default phone number formatting in MS EDGE -->
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <title>WCL-PreSpaceCutter - demo</title>
+
+</head>
+
+<body>
+    <h1>WCL-PreSpaceCutter</h1>
+    <p>demonstration page</p>
+
+    <h4>About WCL-PreSpaceCutter</h4>
+    <p>PreSpaceCutter is simple plugin which makes coding pre-formatted text easier.</p>
+    <p>When you are working on your html code and you have to write some pre-formatted text, it is a little bit problematic. In most cases you want to put your PRE text starting from left border of your container. If you want to archieve this you have to
+        remove indentations from your code what obviously breaks code flow in your editor.</p>
+    <p>PreSpaceCutter will help you to solve this problem.</p>
+
+    <h4>How to add WCL-PreSpaceCutter to your project?</h4>
+    <p>Plugin is just JavaScript file (wcl-prespacecutter.js) - put it somewhere in your project's directory and link it at the end of body of your document: <b>&lt;script src="wcl-prespacecutter.js"&gt; &lt;/script&gt;</b> - it will run automatically when
+        your page is loaded.
+    </p>
+
+    <h4>How WCL-PreSpaceCutter works?</h4>
+    <p>Basically WCL-PreSpaceCutter removes spaces from left side of your preformatted text but keeps line structure of this text. If the first or the last line of text is empty or spaces-only - it is also removed. That's all. What does it mean for you?
+        You can write your pre-formatted text code according to your code indentations and plugin will remove unecessary spaces on-fly assuming that your leftmost line starts at the left border of the container.
+    </p>
+
+    <h4>Which elements are processed?</h4>
+    <p>By default WCL-PreSpaceCutter processes CODE elements which are direct children of PRE elements ( <b>pre > code</b>) and all PRE elements. In most cases this is enough, but it's very easy to change this selection of elements beacause plugin starts
+        with parameter which is simple jQuery selector. Take a look into source code of the plugin - it starts in first lines. If you want to change processed elements just change parameter in <b>wclPreSpaceCutterRun()</b> - according to jQuery selector
+        rules. You can select elements with particular ID or class, but remember: this plugin checks type of element first - if element is CODE then plugin processes html code of this element, if element is not CODE then plugin processes all text nodes
+        of the element.
+    </p>
+
+    <h4>Demo of this plugin:</h4>
+    <p>Take a look at the source code and then compare it to what you see in your browser - that's how WCL-PreSpaceCutter works. Colors are just for easier observation.</p>
+
+
+    <style>
+        pre {
+            background: lightblue;
+        }
+        
+        code {
+            color: red;
+            background: lightgreen;
+        }
+    </style>
+
+
+
+    <!-- DEMO STARTS HERE -->
+
+
+
+    <pre> 
+           this is first line of preformatted text
+                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+              Sed pharetra elementum augue, rhoncus consectetur est vehicula eu.
+        <code>
+                    body {
+                        background: red;
+                        width: 100px;
+                    }
+
+                    div.important {
+                        font-size: 3rem;
+                        background: url('../images/nofuture.jpg');
+                    }
+
+                        div:not(.important) {
+                            font-size: 2rem;
+                            color: yellow;
+                        }
+        </code>
+     And this is the second text node of PRE tag.
+        Notice that every element and every node
+          is processed separately.
+      In this example we have three elements - two text nodes of PRE element and 
+            one CODE element - and each one is aligned to left side of container, which is body
+  </pre>
+
+
+    <!-- DEMO ENDS HERE -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- PLUGIN JS -->
+    <script src="wcl-prespacecutter.js"></script>
+</body>
+
+</html>
