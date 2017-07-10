@@ -2,7 +2,7 @@
   box-sizing: border-box;
   width: 640px;
   height: 480px;
-  background: none;
+  background: lightblue;
 }
 .wcl-slideshow-container img {
   width: 100%;
