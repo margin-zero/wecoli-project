@@ -25,32 +25,8 @@
     <h1>WCL-PreSpaceCutter</h1>
     <p>demonstration page</p>
 
-    <h4>About WCL-PreSpaceCutter</h4>
-    <p>PreSpaceCutter is simple plugin which makes coding pre-formatted text easier.</p>
-    <p>When you are working on your html code and you have to write some pre-formatted text, it is a little bit problematic. In most cases you want to put your PRE text starting from left border of your container. If you want to archieve this you have to
-        remove indentations from your code what obviously breaks code flow in your editor.</p>
-    <p>PreSpaceCutter will help you to solve this problem.</p>
-
-    <h4>How to add WCL-PreSpaceCutter to your project?</h4>
-    <p>Plugin is just JavaScript file (wcl-prespacecutter.js) - put it somewhere in your project's directory and link it at the end of body of your document: <b>&lt;script src="wcl-prespacecutter.js"&gt; &lt;/script&gt;</b> - it will run automatically when
-        your page is loaded.
-    </p>
-
-    <h4>How WCL-PreSpaceCutter works?</h4>
-    <p>Basically WCL-PreSpaceCutter removes spaces from left side of your preformatted text but keeps line structure of this text. If the first or the last line of text is empty or spaces-only - it is also removed. That's all. What does it mean for you?
-        You can write your pre-formatted text code according to your code indentations and plugin will remove unecessary spaces on-fly assuming that your leftmost line starts at the left border of the container.
-    </p>
-
-    <h4>Which elements are processed?</h4>
-    <p>By default WCL-PreSpaceCutter processes CODE elements which are direct children of PRE elements ( <b>pre > code</b>) and all PRE elements. In most cases this is enough, but it's very easy to change this selection of elements beacause plugin starts
-        with parameter which is simple jQuery selector. Take a look into source code of the plugin - it starts in first lines. If you want to change processed elements just change parameter in <b>wclPreSpaceCutterRun()</b> - according to jQuery selector
-        rules. You can select elements with particular ID or class, but remember: this plugin checks type of element first - if element is CODE then plugin processes html code of this element, if element is not CODE then plugin processes all text nodes
-        of the element.
-    </p>
-
     <h4>Demo of this plugin:</h4>
     <p>Take a look at the source code and then compare it to what you see in your browser - that's how WCL-PreSpaceCutter works. Colors are just for easier observation.</p>
-
 
     <style>
         pre {

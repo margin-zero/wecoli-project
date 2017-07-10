@@ -17,8 +17,6 @@ function wclSlideshowInit() {
         var dataSlideFit = "none";
         var dataSlideClip = "true";
 
-
-
         // 1. read data- attributes and set defaults if data- doesn't exists
         if ($(this).attr('data-slide-mode')) {
             dataSlideMode = $.trim($(this).attr('data-slide-mode').toString().toLowerCase());
@@ -60,7 +58,7 @@ function wclSlideshowInit() {
         };
 
         // 3. generate function dedicated to current slideshow, changing slide to next one. The second parameter tells function
-        // how to display images - resize it or not
+        // how to fit images into container
 
         var showNextSlide = nextSlideshowImage($(this), dataSlideFit);
 
@@ -73,11 +71,8 @@ function wclSlideshowInit() {
         if ((dataSlideMode == "default") || (dataSlideMode == "auto")) {
             var myInterval = setInterval(function() { showNextSlide(); }, dataSlideInterval);
         };
-
     });
-
 }
-
 
 function nextSlideshowImage(slideshow, dataSlideFit) {
 
@@ -100,8 +95,6 @@ function nextSlideshowImage(slideshow, dataSlideFit) {
 }
 
 function resizeSlideshowImage(image, dataSlideFit) {
-
-    // U W A G A! - trzeba usunąć poniższe deklaracje zmiennych- nie są używane
 
     var containerWidth = parseInt(image.parent().width(), 10);
     var containerHeight = parseInt(image.parent().height(), 10);
@@ -138,9 +131,9 @@ function resizeSlideshowImage(image, dataSlideFit) {
                     image.css("height", "auto");
                     image.width(image.parent().width());
                     image.css("top", parseInt((image.parent().height() - image.height()) / 2), 10);
-
                 }
                 break;
+
             case "cover":
                 if (imageProportion == containerProportion) {
                     image.width(image.parent().width());
@@ -172,7 +165,6 @@ function wclSlideshowRefresh() {
         var slideId = parseInt($(this).attr("data-current-image"), 10);
         image = $(this).children("img").eq(slideId);
         dataSlideFit = $(this).attr("data-slide-fit");
-
         resizeSlideshowImage(image, dataSlideFit)
     });
 };

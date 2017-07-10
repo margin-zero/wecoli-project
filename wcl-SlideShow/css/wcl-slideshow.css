@@ -1,7 +1,7 @@
 .wcl-slideshow-container {
   box-sizing: border-box;
-  width: 50%;
-  height: 300px;
+  width: 640px;
+  height: 480px;
   background: none;
 }
 .wcl-slideshow-container img {
