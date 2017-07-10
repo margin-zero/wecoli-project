@@ -1,0 +1,20 @@
+.wcl-slideshow-container {
+  box-sizing: border-box;
+  width: 50%;
+  height: 300px;
+  background: none;
+}
+.wcl-slideshow-container img {
+  width: 100%;
+  height: auto;
+  display: none;
+  position: relative;
+}
+.wcl-slideshow-container img.fitwidth {
+  width: 100%;
+  height: auto;
+}
+.wcl-slideshow-container img.fitheight {
+  height: 100%;
+  width: auto;
+}
