@@ -1,13 +1,9 @@
 .wcl-flipcard-container {
-  width: 200px;
-  height: 300px;
   position: relative;
   overflow: hidden;
 }
 .wcl-flipcard-container .wcl-flipcard-front,
 .wcl-flipcard-container .wcl-flipcard-back {
-  width: 200px;
-  height: 300px;
   position: absolute;
   top: 0;
   left: 0;
