@@ -1,20 +1,45 @@
-.wcl-slideshow-container {
-  box-sizing: border-box;
-  width: 640px;
-  height: 480px;
-  background: lightblue;
-}
-.wcl-slideshow-container img {
-  width: 100%;
-  height: auto;
-  display: none;
+.wcl-flipcard-container {
+  width: 200px;
+  height: 300px;
   position: relative;
+  overflow: hidden;
 }
-.wcl-slideshow-container img.fitwidth {
-  width: 100%;
-  height: auto;
+.wcl-flipcard-container .wcl-flipcard-front,
+.wcl-flipcard-container .wcl-flipcard-back {
+  width: 200px;
+  height: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: transform 0.75s;
+  -moz-transition: transform 0.75s;
+  -o-transition: transform 0.75s;
+  transition: transform 0.75s;
 }
-.wcl-slideshow-container img.fitheight {
-  height: 100%;
-  width: auto;
+.wcl-flipcard-container.wcl-flipcard-normal .wcl-flipcard-front {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.wcl-flipcard-container.wcl-flipcard-normal .wcl-flipcard-back {
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.wcl-flipcard-container.wcl-flipcard-inversed .wcl-flipcard-front {
+  -webkit-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.wcl-flipcard-container.wcl-flipcard-inversed .wcl-flipcard-back {
+  -webkit-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  transform: rotateY(0deg);
 }
